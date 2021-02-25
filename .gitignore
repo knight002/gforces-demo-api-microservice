@@ -1,0 +1,15 @@
+/.env.local
+/.env.local.php
+/.env.*.local
+/vendor
+
+/nbproject
+composer.lock
+.DS_Store
+/tmp
+
+#postman
+tests/postman/results
+tests/postman/node_modules
+
+/api-tools-skeleton
