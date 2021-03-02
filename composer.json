@@ -75,5 +75,6 @@
         "run-phpunit": "vendor/bin/phpunit",
         "server-up": "docker-compose build && docker-compose up -d",
         "server-down": "docker-compose down",
+        "run-install": "docker exec -it demo-api-microservice-php composer install"
     }
 }

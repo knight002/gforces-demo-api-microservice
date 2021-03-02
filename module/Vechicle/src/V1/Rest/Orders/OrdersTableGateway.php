@@ -72,9 +72,6 @@ class OrdersTableGateway extends TableGateway implements RestApiGeneralInterface
         return $rs;
     }
 
-    /**
-     * @return DbSelect
-     */
     public function create(stdClass $data)
     {
         $table = $this->getTable();

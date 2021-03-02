@@ -26,14 +26,12 @@ else \
         cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini; \
 fi;
 
+#CMD bash -c "composer install -o --prefer-dist --no-progress --no-suggest --no-interaction"
+
 # Dev environment doesn't run this stage or beyond
 FROM base as build
 
 ARG WITH_XDEBUG=false
-
-# This variable is to enable private package installation
-# it will be set via Terraform
-ARG COMPOSER_AUTH
 
 RUN if [ $WITH_XDEBUG = "true" ] ; then \
         pecl install xdebug; \
@@ -58,3 +56,7 @@ ADD ./public ${APP_ROOT}/public
 
 #db
 COPY ./db/docker-entrypoint-initdb.d /docker-entrypoint-initdb.d/
+
+ENTRYPOINT ["docker-entrypoint"]
+CMD ["php-fpm"]
+

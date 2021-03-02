@@ -8,6 +8,8 @@ composer.lock
 .DS_Store
 /tmp
 *.bak
+*.config.old
+
 
 #postman
 tests/postman/results
