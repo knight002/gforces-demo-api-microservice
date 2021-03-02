@@ -7,6 +7,7 @@
 composer.lock
 .DS_Store
 /tmp
+*.bak
 
 #postman
 tests/postman/results
