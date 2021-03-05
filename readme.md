@@ -21,14 +21,24 @@ Once it's up an running run the following to resolve dependencies:
 ```sh
 docker exec -it demo-api-microservice-php composer install
 ```
-Database settings are here for simplicity (you can overwrite them by creating local.php):
- ./gforces-demo-api-microservice/config/autoload/global.php
+
+Database settings are here for simplicity:
+
+./gforces-demo-api-microservice/config/autoload/global.php
+(you can overwrite them by creating local.php):
+
 Make sure those settings match your docker network settings.
 
 The database structure should be created by now but just in case you'll find the structure here:
+
 ./gforces-demo-api-microservice/docker/db/docker-entrypoint-initdb.d/init.sql
 
 Mysql server should be exposed on port 3307
+```
+      MYSQL_DATABASE: dbname
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: dbpassword
+```
 
 ## Performing requests / API endpoints:
 
